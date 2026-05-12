@@ -10,22 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Enable Corepack (pnpm manager)
+      - name: Enable Corepack
         run: corepack enable
 
-      - name: Prepare pnpm
+      - name: Activate pnpm
         run: corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build project
+      - name: Build
         run: pnpm build

@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      PNPM_ENABLE_PREPOST_SCRIPTS: "1"
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -27,9 +24,8 @@ jobs:
       - name: Activate pnpm
         run: corepack prepare pnpm@latest --activate
 
-      # 🔥 CRITICAL FIX (this is what solves your error)
       - name: Install dependencies
-        run: pnpm install --unsafe-perm --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build project
         run: pnpm build

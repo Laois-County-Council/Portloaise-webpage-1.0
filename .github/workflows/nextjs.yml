@@ -10,32 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js (IMPORTANT: use Node 22)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      # 3. Enable Corepack (pnpm manager comes from Node)
       - name: Enable Corepack
         run: corepack enable
 
-      # 4. Activate pnpm
-      - name: Prepare pnpm
+      - name: Activate pnpm
         run: corepack prepare pnpm@latest --activate
 
-      # 5. Allow dependency build scripts (fix sharp/core-js error)
-      - name: Enable install scripts
-        run: pnpm config set ignore-scripts false
+      # 🔥 IMPORTANT FIX
+      - name: Allow pnpm build scripts
+        run: pnpm config set enable-pre-post-scripts true
 
-      # 6. Install dependencies
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
-      # 7. Build project
       - name: Build project
         run: pnpm build

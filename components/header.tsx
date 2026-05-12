@@ -17,31 +17,12 @@ import { Moon, Sun, Globe, Menu, X, Home, Laptop, BookOpen, FileText, ChevronDow
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
-// All supported languages — sorted roughly by prevalence in Laois/Ireland.
 const LANGUAGES = [
-  { code: "en", native: "English",       label: "English" },
-  { code: "ar", native: "العربية",        label: "Arabic" },
-  { code: "uk", native: "Українська",     label: "Ukrainian" },
-  { code: "pl", native: "Polski",         label: "Polish" },
-  { code: "ro", native: "Română",         label: "Romanian" },
-  { code: "fr", native: "Français",       label: "French" },
-  { code: "es", native: "Español",        label: "Spanish" },
-  { code: "de", native: "Deutsch",        label: "German" },
-  { code: "it", native: "Italiano",       label: "Italian" },
-  { code: "pt", native: "Português",      label: "Portuguese" },
-  { code: "ru", native: "Русский",        label: "Russian" },
-  { code: "ku", native: "Kurdî",          label: "Kurdish (Kurmanji)" },
-  { code: "ps", native: "پښتو",           label: "Pashto (Afghan)" },
-  { code: "fa", native: "دری / فارسی",    label: "Dari / Persian" },
-  { code: "km", native: "ខ្មែរ",           label: "Khmer (Cambodian)" },
-  { code: "so", native: "Soomaali",       label: "Somali" },
-  { code: "ti", native: "ትግርኛ",           label: "Tigrinya" },
-  { code: "am", native: "አማርኛ",           label: "Amharic" },
-  { code: "zh", native: "中文",            label: "Chinese (Simplified)" },
-  { code: "tr", native: "Türkçe",         label: "Turkish" },
-  { code: "bn", native: "বাংলা",           label: "Bengali" },
-  { code: "hi", native: "हिन्दी",          label: "Hindi" },
-  { code: "sw", native: "Kiswahili",      label: "Swahili" },
+  { code: "en", native: "English",    label: "English" },
+  { code: "ar", native: "العربية",    label: "Arabic" },
+  { code: "ku", native: "Kurdî",      label: "Kurdish" },
+  { code: "ps", native: "پښتو",       label: "Afghani (Pashto)" },
+  { code: "fa", native: "فارسی / دری", label: "Iranian (Dari/Farsi)" },
 ]
 
 export function Header() {

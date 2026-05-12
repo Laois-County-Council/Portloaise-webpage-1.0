@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { useLanguage } from "@/lib/language-context"
 import {
   MessageSquare,
@@ -218,11 +217,11 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) { onClose(); setSelected(null) } }}>
-      <DialogContent className="max-w-2xl w-full p-0 gap-0 overflow-hidden max-h-[95dvh] flex flex-col">
+      <DialogContent className="max-w-2xl w-full p-0 gap-0 flex flex-col" style={{ maxHeight: "90dvh" }}>
         {!selected ? (
           // Scenario list
           <>
-            <DialogHeader className="px-4 sm:px-6 pt-5 pb-4 shrink-0">
+            <DialogHeader className="px-4 sm:px-6 pt-5 pb-4 shrink-0 border-b border-border">
               <DialogTitle className="flex items-center gap-2 text-lg sm:text-xl">
                 <MessageSquare className="h-5 w-5 text-primary shrink-0" />
                 {t("scenarios.title")}
@@ -231,8 +230,8 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
                 {t("scenarios.subtitle")}
               </DialogDescription>
             </DialogHeader>
-            <ScrollArea className="flex-1 min-h-0">
-              <div className="grid gap-3 px-4 sm:px-6 pb-6">
+            <div className="overflow-y-auto flex-1">
+              <div className="grid gap-3 px-4 sm:px-6 py-4 pb-6">
                 {scenarios.map((s) => {
                   const Icon = s.icon
                   return (
@@ -263,7 +262,7 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
                   )
                 })}
               </div>
-            </ScrollArea>
+            </div>
           </>
         ) : (
           // Scenario detail
@@ -291,7 +290,7 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
               </div>
             </DialogHeader>
 
-            <ScrollArea className="flex-1 min-h-0">
+            <div className="overflow-y-auto flex-1">
               <div className="px-4 sm:px-6 py-4 sm:py-5 space-y-5">
                 {/* Dialogue */}
                 <div className="space-y-3">
@@ -348,7 +347,7 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
                   </CardContent>
                 </Card>
               </div>
-            </ScrollArea>
+            </div>
           </>
         )}
       </DialogContent>

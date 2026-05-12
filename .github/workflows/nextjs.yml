@@ -24,9 +24,9 @@ jobs:
       - name: Activate pnpm
         run: corepack prepare pnpm@latest --activate
 
-      # 🔥 CRITICAL FIX (this is what actually resolves your error)
+      # 🔥 CRITICAL FIX: force clean install (NO approval mode)
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile --config.ignore-scripts=false
+        run: pnpm install --frozen-lockfile=false
 
       - name: Build project
         run: pnpm build

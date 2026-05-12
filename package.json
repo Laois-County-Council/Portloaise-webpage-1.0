@@ -75,6 +75,10 @@
     "typescript": "5.7.3"
   },
   "pnpm": {
+    "allowBuilds": {
+      "sharp": true,
+      "core-js": true
+    },
     "onlyBuiltDependencies": [
       "sharp",
       "core-js"

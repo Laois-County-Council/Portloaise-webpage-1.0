@@ -24,8 +24,12 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile=false
+      - name: Configure pnpm and Install
+        run: |
+          # Disable strict build failure for any missed dependencies
+          pnpm config set strict-dep-builds false
+          # Install dependencies
+          pnpm install --no-frozen-lockfile
 
       - name: Build project
         run: pnpm build

@@ -24,12 +24,9 @@ jobs:
       - name: Activate pnpm
         run: corepack prepare pnpm@latest --activate
 
-      # 🔥 IMPORTANT FIX
-      - name: Allow pnpm build scripts
-        run: pnpm config set enable-pre-post-scripts true
-
+      # ✅ FIX: allow build scripts properly
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --no-frozen-lockfile --ignore-scripts=false
 
       - name: Build project
         run: pnpm build

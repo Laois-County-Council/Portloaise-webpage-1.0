@@ -213,7 +213,7 @@ interface ConversationScenariosProps {
 
 export function ConversationScenarios({ open, onClose }: ConversationScenariosProps) {
   const [selected, setSelected] = useState<Scenario | null>(null)
-  const { t } = useLanguage()
+  const { t, isRTL } = useLanguage()
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) { onClose(); setSelected(null) } }}>
@@ -247,14 +247,14 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-1">
                             <span className="font-semibold text-sm group-hover:text-primary transition-colors">
-                              {s.title}
+                              {isRTL ? s.titleAr || s.title : s.title}
                             </span>
                             <Badge variant="outline" className="text-xs shrink-0">
                               {t("scenarios.level")} {s.level}
                             </Badge>
                           </div>
                           <p className="text-xs sm:text-sm text-muted-foreground leading-snug">
-                            {s.description}
+                            {isRTL ? s.descriptionAr || s.description : s.description}
                           </p>
                         </div>
                       </div>
@@ -350,7 +350,26 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
             </div>
           </>
         )}
+        <div className="text-xs text-muted-foreground border-t pt-4 mt-4">
+          <p>
+            Sources:
+          </p>
+
+          <ul className="list-disc ml-4 mt-2 space-y-1">
+            <li>
+              <a
+                href="https://www.bbc.co.uk/learningenglish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                BBC Learning English
+              </a>
+            </li>
+          </ul>
+        </div>
       </DialogContent>
+      
     </Dialog>
   )
 }

@@ -10,6 +10,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  allowedDevOrigins: ['10.30.84.30', 'localhost:3000'],
 }
 
 export default nextConfig

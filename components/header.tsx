@@ -18,11 +18,8 @@ import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
 const LANGUAGES = [
-  { code: "en", native: "English",    label: "English" },
-  { code: "ar", native: "العربية",    label: "Arabic" },
-  { code: "ku", native: "Kurdî",      label: "Kurdish" },
-  { code: "ps", native: "پښتو",       label: "Afghani (Pashto)" },
-  { code: "fa", native: "فارسی / دری", label: "Iranian (Dari/Farsi)" },
+  { code: "en", native: "English", label: "English" },
+  { code: "ar", native: "العربية", label: "Arabic" },
 ]
 
 export function Header() {

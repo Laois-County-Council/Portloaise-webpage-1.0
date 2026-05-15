@@ -8,10 +8,8 @@ import {
   Heart, 
   BookOpen, 
   Users, 
-  Phone, 
   Laptop, 
   ArrowRight,
-  CheckCircle2,
   Sparkles,
   Download,
   FileText
@@ -19,13 +17,6 @@ import {
 
 export default function HomePage() {
   const { t, isRTL } = useLanguage()
-
-  const adaptationTips = [
-    t("home.adapt.1"),
-    t("home.adapt.2"),
-    t("home.adapt.3"),
-    t("home.adapt.4"),
-  ]
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -154,28 +145,6 @@ export default function HomePage() {
           </CardContent>
         </Card>
 
-        {/* Adaptation Tips */}
-        <Card className="group hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-2">
-          <CardHeader>
-            <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
-              <CheckCircle2 className="h-6 w-6 text-accent-foreground" />
-            </div>
-            <CardTitle>{t("home.adapt.title")}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {adaptationTips.map((tip, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-sm font-semibold text-primary">{index + 1}</span>
-                  </div>
-                  <span className="text-muted-foreground">{tip}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
         {/* Computer Use */}
         <Card className="group hover:shadow-lg transition-shadow">
           <CardHeader>
@@ -194,27 +163,6 @@ export default function HomePage() {
                 <ArrowRight className={`h-4 w-4 ${isRTL ? "rotate-180" : ""}`} />
               </Link>
             </Button>
-          </CardContent>
-        </Card>
-
-        {/* Contact */}
-        <Card className="group hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-3">
-          <CardHeader className="text-center">
-            <div className="h-12 w-12 rounded-xl bg-muted flex items-center justify-center mb-4 mx-auto group-hover:bg-muted/80 transition-colors">
-              <Phone className="h-6 w-6 text-muted-foreground" />
-            </div>
-            <CardTitle>{t("home.contact.title")}</CardTitle>
-            <CardDescription className="text-base max-w-lg mx-auto">
-              {t("home.contact.text")}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted">
-                <Phone className="h-4 w-4" />
-                <span>{isRTL ? "الطوارئ: 112 أو 999" : "Emergency: 112 or 999"}</span>
-              </div>
-            </div>
           </CardContent>
         </Card>
       </section>

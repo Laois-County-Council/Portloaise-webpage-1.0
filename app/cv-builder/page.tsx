@@ -1,5 +1,6 @@
 "use client"
 
+import { useLanguage } from "@/lib/language-context"
 import { useState, useRef, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -265,6 +266,7 @@ function CVPreview({ data }: { data: CVData }) {
 
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 export default function CVBuilderPage() {
+  const { isRTL } = useLanguage()
   const [cv, setCV] = useState<CVData>(emptyCV)
   const [showPreview, setShowPreview] = useState(true)
   const [downloading, setDownloading] = useState(false)
@@ -470,7 +472,7 @@ export default function CVBuilderPage() {
             {/* Professional Summary */}
             <Card>
               <CardHeader className="pb-3">
-                <CardTitle className="text-base">Professional Summary</CardTitle>
+                <CardTitle className="text-base">{isRTL ? "الملخص المهني" : "Professional Summary"}</CardTitle>
               </CardHeader>
               <CardContent>
                 <Textarea

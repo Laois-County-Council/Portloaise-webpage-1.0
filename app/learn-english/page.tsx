@@ -191,7 +191,7 @@ export default function LearnEnglishPage() {
             </Button>
             <Button asChild variant="outline" className="gap-2">
               <a 
-                href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/Docs/Online%20ESOL%20classes%20and%20resources%20July%202024.pdf" 
+                href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/raw/refs/heads/Docs/Online%20ESOL%20classes%20and%20resources%20July%202024.docx" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -201,7 +201,7 @@ export default function LearnEnglishPage() {
             </Button>
             <Button asChild variant="outline" className="gap-2">
               <a 
-                href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/Docs/Arabic%20version.pdf" 
+                href="https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/raw/refs/heads/Docs/Arabic%20version.docx" 
                 target="_blank"
                 rel="noopener noreferrer"
               >

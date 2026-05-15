@@ -352,10 +352,32 @@ export function ConversationScenarios({ open, onClose }: ConversationScenariosPr
         )}
         <div className="text-xs text-muted-foreground border-t pt-4 mt-4">
           <p>
-            Sources:
+            Sources & inspiration:
           </p>
 
           <ul className="list-disc ml-4 mt-2 space-y-1">
+            <li>
+              <a
+                href="https://www.citizensinformation.ie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Citizens Information Ireland
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.hse.ie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                HSE Ireland
+              </a>
+            </li>
+
             <li>
               <a
                 href="https://www.bbc.co.uk/learningenglish"

@@ -88,7 +88,7 @@ export default function LearnEnglishPage() {
     {
       title: t("learn.vocabulary"),
       description: t("learn.vocabulary.desc"),
-      url: "https://www.bbc.co.uk/learningenglish/english/features/vocabulary",
+      url: "https://www.bbc.co.uk/programmes/p02pc9tn/episodes/downloads",
       level: "A2+",
     },
     {
@@ -122,9 +122,9 @@ export default function LearnEnglishPage() {
       url: "https://www.youtube.com/user/oxfordonlineenglish",
     },
     {
-      title: isRTL ? "للناطقين بالعربية: Apna Teacher" : "For Arabic Speakers: Apna Teacher",
-      description: isRTL ? "دروس بالعربية والإنجليزية" : "Lessons in Arabic and English",
-      url: "https://www.youtube.com/channel/UCkFrLLHNEHkGqjHYfGqWJyQ",
+      title: "English with Emma · engVid",
+      description: isRTL ? "دروس ممتازة لقواعد اللغة والنطق والاستعداد للاختبارات" : "Excellent lessons for grammar, pronunciation, and test preparation",
+      url: "https://www.youtube.com/@engvidEmma",
     },
   ]
 

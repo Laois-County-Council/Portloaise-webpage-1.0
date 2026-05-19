@@ -53,18 +53,28 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    // 1. Changed lang to "ar" if you are targeting Arabic-first users, 
+    // and kept suppressHydrationWarning intact.
+    <html lang="ar" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-background`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Providers>
-            {children}
-          </Providers>
-        </ThemeProvider>
+        {/* 2. We wrap the ThemeProvider or add properties so the root script 
+          injection is ignored by the automated Chrome translator extension.
+        */}
+        <div translate="no">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* We allow translation to happen safely back inside the dynamic components area */}
+            <div translate="yes">
+              <Providers>
+                {children}
+              </Providers>
+            </div>
+          </ThemeProvider>
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -1,22 +1,25 @@
 "use client"
 
 import { useLanguage } from "@/lib/language-context"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
   Power, 
   LogIn, 
   Wifi, 
   MousePointer, 
+  Keyboard,
+  Globe,
+  ShieldAlert,
+  Sliders,
   BatteryCharging, 
-  AlertTriangle,
-  HelpCircle,
+  LogOut,
   Laptop,
   KeyRound
 } from "lucide-react"
 
 export default function LaptopGuidePage() {
-  const { t, isRTL } = useLanguage()
+  const { t } = useLanguage()
 
   const steps = [
     {
@@ -44,16 +47,40 @@ export default function LaptopGuidePage() {
       color: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
     },
     {
-      icon: BatteryCharging,
+      icon: Keyboard,
       title: t("laptop.step5.title"),
       items: [t("laptop.step5.1"), t("laptop.step5.2"), t("laptop.step5.3")],
+      color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400",
+    },
+    {
+      icon: Globe,
+      title: t("laptop.step6.title"),
+      items: [t("laptop.step6.1"), t("laptop.step6.2"), t("laptop.step6.3")],
+      color: "bg-teal-500/10 text-teal-600 dark:text-teal-400",
+    },
+    {
+      icon: ShieldAlert,
+      title: t("laptop.step7.title"),
+      items: [t("laptop.step7.1"), t("laptop.step7.2"), t("laptop.step7.3")],
+      color: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+    },
+    {
+      icon: Sliders,
+      title: t("laptop.step8.title"),
+      items: [t("laptop.step8.1"), t("laptop.step8.2"), t("laptop.step8.3")],
+      color: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400",
+    },
+    {
+      icon: BatteryCharging,
+      title: t("laptop.step9.title"),
+      items: [t("laptop.step9.1"), t("laptop.step9.2"), t("laptop.step9.3")],
       color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
     },
     {
-      icon: AlertTriangle,
-      title: t("laptop.step6.title"),
-      items: [t("laptop.step6.1"), t("laptop.step6.2"), t("laptop.step6.3")],
-      color: "bg-red-500/10 text-red-600 dark:text-red-400",
+      icon: LogOut,
+      title: t("laptop.step10.title"),
+      items: [t("laptop.step10.1"), t("laptop.step10.2"), t("laptop.step10.3")],
+      color: "bg-rose-500/10 text-rose-600 dark:text-rose-400",
     },
   ]
 
@@ -133,23 +160,6 @@ export default function LaptopGuidePage() {
             </Card>
           )
         })}
-
-        {/* Help Section */}
-        <Card className="border-accent/20 bg-accent/5">
-          <CardHeader>
-            <div className="flex items-start gap-4">
-              <div className="h-12 w-12 rounded-xl bg-accent/20 flex items-center justify-center shrink-0">
-                <HelpCircle className="h-6 w-6 text-accent-foreground" />
-              </div>
-              <div>
-                <CardTitle className="text-xl">{t("laptop.step7.title")}</CardTitle>
-                <CardDescription className="text-base mt-2">
-                  {t("laptop.step7.text")}
-                </CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-        </Card>
       </div>
     </div>
   )

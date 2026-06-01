@@ -12,7 +12,6 @@ const en: Record<string, string> = {
   "nav.home": "Home",
   "nav.laptop": "Laptop Guide",
   "nav.learn": "Learn English",
-  "nav.camps": "Summer Camps",
   "nav.cv": "CV Builder",
   "home.title": "Welcome to Laois",
   "home.subtitle": "Your guide to life in Ireland",
@@ -296,7 +295,6 @@ const en: Record<string, string> = {
   "scenarios.welfare.tip4": "Say: 'I would like to speak to a case officer, please.'",
   "scenarios.welfare.tip5": "You can also apply online at mywelfare.ie.",
   
-  "camps.title": "Summer Camps",
   "camps.subtitle": "Find the best camps for children and young people",
   "camps.filter.all": "All Types",
   "camps.filter.sport": "Sport",

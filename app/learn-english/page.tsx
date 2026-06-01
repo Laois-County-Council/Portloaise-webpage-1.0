@@ -213,6 +213,47 @@ export default function LearnEnglishPage() {
         </CardContent>
       </Card>
 
+      {/* Loecsen */}
+      <Card className="mb-8 border-blue-500/30 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+              <BookOpen className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            </div>
+
+            <span>
+              {isRTL
+                ? "دروس الإنجليزية التفاعلية"
+                : "Interactive English Lessons"}
+            </span>
+          </CardTitle>
+
+          <CardDescription className="text-base">
+            {isRTL
+              ? "تعلم الإنجليزية من خلال دروس تفاعلية تشمل المفردات والنطق والاستماع والمحادثة للمبتدئين والمتقدمين."
+              : "Learn English through interactive lessons covering vocabulary, pronunciation, listening, and conversation for all levels."}
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent>
+          <Button
+            asChild
+            size="lg"
+            className="gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+          >
+            <a
+              href="https://www.loecsen.com/ar/%D8%A7%D9%84%D8%AF%D8%B1%D9%88%D8%B3-%D8%A7%D9%84%D8%A7%D9%86%D8%AC%D9%84%D9%8A%D8%B2%D9%8A%D8%A9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <BookOpen className="h-4 w-4" />
+              {isRTL ? "ابدأ التعلم الآن" : "Start Learning Now"}
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        </CardContent>
+      </Card>
+
       {/* Transparent Language Platform */}
       <Card className="mb-8">
         <CardHeader>

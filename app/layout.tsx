@@ -17,24 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Laois Guide - Welcome to Ireland',
   description: 'A comprehensive guide for immigrants in Laois, Ireland. Learn English, find resources, and adapt to life in Ireland.',
-  generator: 'v0.app',
   keywords: ['Laois', 'Ireland', 'immigrants', 'ESOL', 'English learning', 'community guide'],
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: "https://github.com/EskandarAtrakchi/Portloaise-webpage-1.0/blob/Docs/logo%20(2).png?raw=true",
   },
 }
 

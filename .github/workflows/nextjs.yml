@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
  
-# Grant permissions for GitHub Pages deployment
+# Grant permissions for GitHub Pages deployment concurrency: 
 permissions:
   contents: read
   pages: write

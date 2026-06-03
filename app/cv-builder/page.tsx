@@ -40,7 +40,7 @@ export default function CvBuilderPage() {
       */
       <div className="w-full h-[calc(100vh-64px)] bg-background overflow-hidden">
         <iframe
-          src="https://eskandaratrakchi.github.io/CV_builder/" 
+          src="https://laois-county-council.github.io/CV_builder/" 
           className="w-full h-full border-0"
           title="CV Builder"
           allow="downloads"
